@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UniWisdom Demo — offline-first counsel</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.55}
+textarea{width:100%;min-height:90px}button{padding:.6rem 1.2rem;margin-top:.5rem}
+.card{border:1px solid #ddd;border-radius:10px;padding:1rem;margin:1rem 0}
+small{color:#666}.anchor{background:#f7f7f7;padding:.8rem;border-radius:8px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<h1>UniWisdom Demo</h1>
+<p><small>Static demo of the <a href="https://github.com/nikhil2bhardwaj/Uni-Wisdom">Uni-Wisdom skill</a>. No server, no tracking. Full 4-part counsel with a lite verse set (60 records); full 32MB knowledge base ships in the repo. Templated guidance — not a therapist or religious authority.</small></p>
+<label>Tradition (optional — blank = auto-route)
+<select id="trad">
+<option value="">Auto</option><option value="gita">Gita</option><option value="ramayana">Ramayana</option>
+<option value="dhammapada">Dhammapada</option><option value="bible">Bible (WEB)</option><option value="quran">Qur'an (Pickthall)</option>
+</select></label>
+<textarea id="q" placeholder="e.g. I got a flat job offer, market is bad, afraid I'll coast"></textarea>
+<button onclick="advise()">Get counsel</button>
+<div id="out"></div>
+<script src="app.js"></script>
+</body>
+</html>
