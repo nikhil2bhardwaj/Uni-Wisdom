@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/uniwisdom-entry.schema.json",
+  "title": "UniWisdomEntry",
+  "type": "object",
+  "required": ["id", "tradition", "book", "kanda", "chapter", "sarga", "item_number", "canonical_reference", "source_text", "transliteration", "translation", "translator", "edition", "license", "source_url", "keywords"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(BG_[0-9]+_[0-9]+|RAM_[A-Z]+_[0-9]+_[0-9]+|DHP_[0-9]{3}|BIBLE_[A-Z]+_[0-9]+_[0-9]+|QUR_[0-9]+_[0-9]+)$"
+    },
+    "tradition": {
+      "type": "string",
+      "enum": ["gita", "ramayana", "dhammapada", "bible", "quran"]
+    },
+    "book": {
+      "type": ["string", "null"]
+    },
+    "kanda": {
+      "type": ["string", "null"]
+    },
+    "chapter": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "sarga": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "item_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "canonical_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transliteration": {
+      "type": ["string", "null"]
+    },
+    "translation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "translator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": ["string", "null"]
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "tradition": { "const": "gita" } } },
+      "then": { "properties": { "book": { "const": null }, "kanda": { "const": null }, "sarga": { "const": null }, "chapter": { "type": "integer" }, "transliteration": { "type": "string" } } }
+    },
+    {
+      "if": { "properties": { "tradition": { "const": "ramayana" } } },
+      "then": { "properties": { "book": { "const": null }, "kanda": { "type": "string" }, "chapter": { "type": "integer" }, "sarga": { "type": "integer" }, "transliteration": { "type": "string" } } }
+    },
+    {
+      "if": { "properties": { "tradition": { "const": "dhammapada" } } },
+      "then": { "properties": { "book": { "const": null }, "kanda": { "const": null }, "sarga": { "const": null }, "chapter": { "type": "integer" }, "transliteration": { "type": "string" } } }
+    },
+    {
+      "if": { "properties": { "tradition": { "const": "bible" } } },
+      "then": { "properties": { "book": { "type": "string" }, "kanda": { "const": null }, "sarga": { "const": null }, "chapter": { "type": "integer" }, "transliteration": { "const": null } } }
+    },
+    {
+      "if": { "properties": { "tradition": { "const": "quran" } } },
+      "then": { "properties": { "book": { "const": null }, "kanda": { "const": null }, "sarga": { "const": null }, "chapter": { "type": "integer" }, "transliteration": { "type": "string" } } }
+    }
+  ]
+}

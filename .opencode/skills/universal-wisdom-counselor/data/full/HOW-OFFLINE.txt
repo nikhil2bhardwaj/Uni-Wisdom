@@ -1,0 +1,3 @@
+Offline rule: skill reads data/full/*.json + data/samples.json + references/*.md only.
+No runtime webfetch required. If a verse missing locally, summarize episode — never invent.
+Full corpora: re-run scripts/fetch.py with internet once, or unzip uniwisdom-data-full.zip into data/full/.

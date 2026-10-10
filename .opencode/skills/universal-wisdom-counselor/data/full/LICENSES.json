@@ -1,0 +1,7 @@
+{
+  "gita": "Unlicense (PD)",
+  "bible_web": "Public Domain (trademark: don't rename modified text 'WEB')",
+  "ramayana_sanskrit": "shlokas PD; DharmicData compilation ODbL-1.0",
+  "quran_ar": "Tanzil verbatim+attribution; Pickthall EN PD \u2014 fetch via scripts, not bundled here until you accept Tanzil terms",
+  "dhammapada": "Pali PD; Sujato EN CC0 \u2014 fetch per-vagga from SuttaCentral API, cache locally"
+}
