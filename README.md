@@ -5,8 +5,8 @@ Grounded counsel from Gita, Ramayana, Dhammapada, Bible (WEB), Qur'an (Pickthall
 ## Install (online, one time)
 
 ```sh
-git clone https://github.com/<you>/uniwisdom.git
-cd uniwisdom
+git clone https://github.com/nikhil2bhardwaj/Uni-Wisdom.git
+cd Uni-Wisdom
 # Project-local: .opencode/ is auto-discovered. Nothing else to do.
 ```
 
@@ -25,7 +25,7 @@ No clone of the data needed if you use the zip — see Offline.
 The skill never fetches the web at counsel time. Texts are already in the repo (`data/unified/`). Three ways to go air-gapped:
 
 1. **Clone once online, then unplug.** `git clone` above is the only network step. Everything after runs from `data/unified/`.
-2. **Zip only (no git).** Download `uniwisdom-data-full-v1.zip` (5.7MB) from Releases, unzip into a project so it contains `.opencode/` + `data/` + `references/` + `scripts/`. OpenCode discovers it the same way.
+2. **Zip only (no git).** Download `uniwisdom-data-full-v1.zip` (5.7MB) from [Releases](https://github.com/nikhil2bhardwaj/Uni-Wisdom/releases), unzip into a project so it contains `.opencode/` + `data/` + `references/` + `scripts/`. OpenCode discovers it the same way.
 3. **Local LLM (fully private).** Point RAG at the unified JSONs:
    - LM Studio / Ollama / Open WebUI: create a Knowledge collection from `.opencode/skills/universal-wisdom-counselor/data/unified/*.json`, attach to a preset whose system prompt is `SKILL.md`.
    - AnythingLLM: workspace → upload `data/unified/*.json` → set mode to **Query (RAG)**.
